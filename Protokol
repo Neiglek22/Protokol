@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <stdlib.h>
+int desifr()
+{
+	char retezec[100], ch;
+	int i,sif;
+	printf("Napis retezec\n");
+	scanf("%s",retezec);
+	printf("Zadej sifr\n");
+	scanf("%d", &sif);
+        for(i = 0; retezec[i] != '\0'; ++i){
+            ch = retezec[i];
+                if(ch >= 'a' && ch <= 'z'){
+                    ch = ch + sif;
+                        if(ch > 'z'){
+                            ch = ch - 'z' + 'a' - 1;
+                                    }
+                                        retezec[i] = ch;
+                                        }
+                        else if(ch >= 'A' && ch <= 'Z'){
+                                ch = ch + sif;
+                                if(ch > 'Z')
+                                    {
+                                    ch = ch - 'Z' + 'A' - 1;
+                                        }
+                                                retezec[i] = ch;
+                                                        }
+                                            }
+	printf("%s",retezec);
+	return retezec;
+}
+int sifr()
+{
+      	char retezec[100], ch;
+	int i, sif;
+	printf("Napis retezec\n");
+	scanf("%s", retezec);
+	printf("Zadej sifr\n");
+	scanf("%d", &sif);
+	for(i = 0; retezec[i] != '\0'; ++i)
+                    {
+                        ch = retezec[i];
+                            if(ch >= 'a' && ch <= 'z'){
+                                ch = ch + sif;
+                                    if(ch > 'z'){
+                                        ch = ch - 'z' - 'a' - 1;
+                                                }
+                                            retezec[i] = ch;
+                                                        }
+                                    else if(ch >= 'A' && ch <= 'Z'){
+                                ch = ch + sif;
+                                if(ch > 'Z'){
+                                    ch = ch - 'Z' - 'A' - 1;
+                                            }
+                                        retezec[i] = ch;
+                                                        }
+                    }
+       printf("%s\n",retezec);
+        return retezec;
+}
+int main()
+{
+    int c;
+    printf(" Chces:\n1.Sifrovat\n2.Desifrovat\n");
+    scanf("%d",&c);
+    if(c==1)
+        {
+             int sift = sifr();
+        }
+            else if(c==2)
+            {
+                 int des =desifr();
+            }
+                else
+                {
+                printf(" Spatne cislo.Zpusti program zase\n");
+                }
+}
